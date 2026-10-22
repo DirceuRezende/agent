@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agente de compras UCP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Agente de compras UCP <small>Boca Rosa</small></h1>
+    <div class="header-actions">
+      <span id="phase" class="badge">DISCOVERY</span>
+      <button id="new-chat" type="button">Nova conversa</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="chat">
+      <div id="messages" class="messages" aria-live="polite"></div>
+      <div id="confirm" class="confirm" hidden>
+        <span id="confirm-text"></span>
+        <button id="confirm-yes" type="button">Confirmar</button>
+        <button id="confirm-no" type="button" class="secondary">Cancelar</button>
+      </div>
+      <form id="form" class="composer">
+        <input id="input" type="text" placeholder="Ex.: quero um batom" autocomplete="off" autofocus>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <aside>
+      <h2>Trilha do turno</h2>
+      <div id="trail" class="trail"></div>
+
+      <h2>Carrinho e checkout</h2>
+      <dl class="panel">
+        <dt>Carrinho</dt><dd id="cart">—</dd>
+        <dt>Checkout</dt><dd id="checkout">—</dd>
+        <dt>Status</dt><dd id="status">—</dd>
+        <dt>Continuar na loja</dt><dd id="continue">—</dd>
+      </dl>
+
+      <h2>Grafo</h2>
+      <pre id="graph" class="mermaid">carregando…</pre>
+    </aside>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.1/mermaid.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

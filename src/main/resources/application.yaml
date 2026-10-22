@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: agent
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:missing}
+      chat:
+        options:
+          model: gpt-4.1-mini
+  mongodb:
+    uri: mongodb://localhost:27017/ucp_agent
+  docker:
+    compose:
+      lifecycle-management: start_only
+
+ucp:
+  agent:
+    profile-url: ${UCP_AGENT_PROFILE_URL:http://localhost:8080/.well-known/ucp}
+  mcp:
+    request-timeout-ms: 15000
+  default-merchant: boca-rosa
+  merchants:
+    boca-rosa:
+      name: Boca Rosa
+      discovery-url: https://bocarosa.com.br
+      ssl:
+        trust-all: true
+      timeout-ms: 800
